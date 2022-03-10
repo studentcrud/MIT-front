@@ -1,0 +1,117 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*, a{
+    letter-spacing: -0.05rem;
+	text-decoration: none;
+}
+
+html{
+    font-size: 14px;
+    letter-spacing: -0.025rem;
+}
+
+button{
+	padding: 2px;
+	margin: 0;
+	outline: none;
+	border: none;
+	background: none;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+button img{
+	width: 16px;
+	height: 16px;
+}
+
+#nav a,
+button.colorbtn{
+	background-color: #ddd;
+	padding: 8px 12px;
+	border-radius: 4px 4px 0 0;
+	color: #333;
+	display: block;
+	line-height: 1;
+	font-size: 12px;
+}
+
+#nav .router-link-exact-active{
+	background-color: #eee;
+	cursor: default;
+}
+
+button.loginbtn,
+#id_check,
+#username{
+	font-size: 12px;
+	color: #777;
+}
+
+button.loginbtn:hover{
+	font-weight: 700;
+}
+
+button.colorbtn{
+	border-radius: 4px;
+	color: #333;
+}
+
+button.colorbtn:hover{
+	background-color: #ccc;
+}
+
+input,
+select,
+textarea{
+	border: 1px solid #ddd;
+	outline: none;
+	padding: 8px;
+	display: block;
+	margin: 16px 0;
+}
+
+textarea{
+	resize: none;
+	height: 200px;
+}

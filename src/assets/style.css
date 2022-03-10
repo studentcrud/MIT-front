@@ -1,0 +1,224 @@
+body{
+    background-color: #eee;
+}
+
+#app{
+    width: 100%;
+}
+
+
+/*=====nav=====*/
+#nav{
+    background-color: #fff;
+}
+
+#nav>div{
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 50px 16px 0;
+    box-sizing: border-box;
+}
+
+#nav ul,
+#nav>div>div{
+    display: flex;
+    justify-content: right;
+}
+
+#nav a{
+    margin-left: 1px;
+}
+
+#nav button{
+    margin-right: 1px;
+}
+/*=====main=====*/
+
+.main{
+    max-width: 700px;
+    margin: auto;
+    padding: 32px 16px;
+    box-sizing: border-box;
+}
+
+.lists{
+    max-height: 60vh;
+    overflow: auto;
+    padding: 16px 0;
+}
+
+.lists li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.update_btns{
+    text-align: right;
+    margin-top: 8px;
+}
+
+/*===modal===*/
+.modal_wrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal{
+    position: absolute;
+    background-color: #fff;
+    padding: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.modal button{
+    display: block;
+    margin: auto;
+}
+
+
+/*===update form===*/
+
+.update_form,
+.join_form{
+	max-width: 450px;
+	margin: auto;
+}
+
+.update_form label{
+    font-size: 11px;
+    margin-bottom: 4px;
+    display: block;
+
+}
+
+.update_form h1,
+.modal h1{
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+.update_form .update_btns{
+    margin-top: 50px;
+}
+
+/*=====board=====*/
+.paging_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paging_btn p{
+    margin: 0 8px;
+    padding-bottom: 3px;
+}
+
+.paging_btn button{
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    background: none;
+    color: #555;
+}
+
+
+.board_info,
+.board_contents,
+.comment,
+.comment_write{
+    padding: 16px;
+}
+
+.board_info{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+}
+
+.board_info h2{
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.board_info div{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.board_info p{
+    margin-right: 8px;
+}
+
+.board_info p,
+.board_info h4
+{
+    font-size: 11px;
+}
+
+.board_contents{
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.comment{
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.comment li{
+    padding: 16px 0;
+}
+
+.comment h4{
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.comment h6{
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.comment_write{
+    background-color: #fff;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+/*===join===*/
+
+.join_form h2{
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+#join_id_input{
+    margin-bottom: 0;
+}

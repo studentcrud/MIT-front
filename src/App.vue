@@ -4,9 +4,9 @@
 			<div>
 				<login />
 				<ul>
-					<li><router-link to="/board">게시판</router-link></li>
+					<li><router-link to="/boards">게시판</router-link></li>
 					<li><router-link to="/">학과</router-link></li>
-					<li><router-link to="/profs">교수진</router-link></li>
+					<li><router-link to="/professors">교수진</router-link></li>
 					<li><router-link to="/students">재학생</router-link></li>
 				</ul>
 			</div>
