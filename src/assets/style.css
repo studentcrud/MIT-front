@@ -65,6 +65,11 @@ body{
 .update_btns{
     text-align: right;
     margin-top: 8px;
+    display: flex;
+}
+
+.update_btns button{
+    margin-right: 4px;
 }
 
 /*===modal===*/

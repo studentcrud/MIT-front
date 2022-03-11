@@ -39,6 +39,7 @@ export default{
             .then((res)=>{
                 console.log(res);
                 this.$store.commit('logIn', res.data);
+                this.$router.replace('/');
             })
             .catch((err)=>{
                 console.log(err);

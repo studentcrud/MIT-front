@@ -11,7 +11,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8085';
+axios.defaults.baseURL = 'http://172.16.28.167:8084';
 
 export default{
     name: 'insertSubjects',

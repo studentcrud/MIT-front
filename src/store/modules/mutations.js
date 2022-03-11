@@ -28,14 +28,10 @@ export default {
         state.subjects = payload;
     },
     setProfessor(state, payload) {
-        state.professoressors = payload;
-    },
-    setBoard(state, payload) {
-        state.boards = payload;
+        state.professors = payload;
     },
 
-    //paging
-    sortBoards(state) {
+    /*sortBoards(state) {
         function sortItems(v1, v2) {
             return v2.id - v1.id;
         }
@@ -48,4 +44,5 @@ export default {
     next(state) {
         return state.pageNum++;
     }
+    */
 }

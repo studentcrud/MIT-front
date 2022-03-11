@@ -6,11 +6,15 @@
             <input type="text" v-model="name" placeholder="이름">
             <input type="text" v-model="age" placeholder="나이">
             <input type="text" v-model="address" placeholder="주소">
-            <select>
-                <option value="" selected hidden>학과 / 지도교수</option>
-                <option v-for="item in this.$store.state.profs" :key="item.profId" :value="item.profId">{{item.profSubject}} : {{item.profName}} 교수</option>
+            <select v-model="professor">
+                <option value="" selected hidden>지도교수</option>
+                <option v-for="item in this.$store.state.professors" :key="item.id" :value="item.professorName">{{item.professorName}} 교수</option>
             </select>
-            <button class="colorbtn">등록</button>
+            <select v-model="subject">
+                <option value="" selected hidden>학과</option>
+                <option v-for="item in this.$store.state.subjects" :key="item.id" :value="item.subjectName">{{item.subjectName}}</option>
+            </select>
+            <button @click="newData" class="colorbtn">등록</button>
         </div>
     </div>
 </template>
@@ -18,7 +22,7 @@
 <script>
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.165:8889';
+axios.defaults.baseURL = 'http://172.16.28.167:8080';
 
 export default{
     name: 'insertStudents',
@@ -26,7 +30,9 @@ export default{
         return{
             name: "",
             age: "",
-            address: ""
+            address: "",
+            subject: "",
+            professor: ""
         }
     },
     methods:{
@@ -34,16 +40,24 @@ export default{
             this.$store.commit('toggle');
         },
         newData(){
-            axios.post('/', {
+            axios.post('api/students', {
                 studentName : this.name,
                 studentAge : this.age,
-                studentAddress : this.address
+                studentAddress : this.address,
+                professorName : this.professor,
+                subjectName : this.subject
             })
             .then((res)=>{
                 console.log(res);
+                this.$router.go();
             })
             .catch((err)=>{
                 console.log(err);
+                console.log(this.name)
+                console.log(this.age)
+                console.log(this.address)
+                console.log(this.professor)
+                console.log(this.subject)
             })
         }
     }

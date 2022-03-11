@@ -9,10 +9,6 @@ export default{
     professors : [],
     boards : [],
 
-    //paging
-    pageNum : 0,
-    index : 10,
-
     //로그인 정보
     userOff : true,
     userId : "",

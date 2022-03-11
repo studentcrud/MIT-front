@@ -2,9 +2,9 @@
     <div id="subjects_up" class="main">
         <div class="update_form">
             <h1>학과 정보 수정</h1>
-            <div v-for="item in subject" :key="item.id">
+            <div>
                 <label>학과명</label>
-                <input type="text" v-model="item.subjectName">
+                <input type="text" v-model="subject.subjectName">
             </div>
             <div class="update_btns">
                 <button class="colorbtn" @click="updateData">등록</button>
@@ -17,7 +17,7 @@
 <script>
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8084';
+axios.defaults.baseURL = 'http://172.16.28.167:8080';
 
 export default{
     name:'updateSubjects',
@@ -28,22 +28,14 @@ export default{
         }
     },
     methods:{
-        getData(){
-            axios.get('/api/student/' + this.id)
-            .then((res)=>{
-                this.subject = res.data
-            })
-            .catch((err)=>{
-                console.log(err);
-            })
-        },
         updateData(){
-            axios.put('/api/student', {
-                id : this.id,
-                subjectName : this.name
+            console.log(this.subject.subjectName);
+            axios.put('/api/subjects/' + this.id, {
+                subjectName : this.subject.subjectName
             })
             .then((res)=>{
                 console.log(res);
+                this.$router.go(-1);
             })
             .catch((err)=>{
                 console.log(err);
@@ -51,7 +43,13 @@ export default{
         }  
     },
     created(){
-        this.getData();
+        axios.get('/api/subject/' + this.id)
+        .then((res)=>{
+            this.subject = res.data
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
 }
 </script>

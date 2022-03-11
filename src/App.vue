@@ -28,6 +28,9 @@ export default {
 	name: "app",
 	components: {
 		login,
+	},
+	created(){
+		this.$store.dispatch('getAll');
 	}
 };
 </script>

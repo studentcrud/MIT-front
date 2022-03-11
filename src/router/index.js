@@ -1,67 +1,59 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import subjects from '../views/subjects.vue'
-import students from '../views/students.vue'
-import professors from '../views/professors.vue'
-import updateSubjects from '../views/updateSubjects.vue'
-import updateStudents from '../views/updateStudents.vue'
-import updateProfessors from '../views/updateProfessors.vue'
-import boards from '../views/boards.vue'
-import login from '../views/loginPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login',
-    name: 'login',
-    component: login
-  },
-  {
     path: '/',
     name: 'subjects',
-    component: subjects
-  },
-  {
-    path: '/students',
-    name: 'students',
-    component: students
-  },
-  {
-    path: '/professors',
-    name: 'professors',
-    component: professors
+    component: () => import('../views/subjects/subjects.vue')
   },
   {
     path: '/subjects/:ids',
     name: 'updateSubjects',
-    component: updateSubjects
+    component: () => import('../views/subjects/updateSubjects.vue')
+  },
+  {
+    path: '/students',
+    name: 'students',
+    component: () => import('../views/students/students.vue')
   },
   {
     path: '/students/:ids',
     name: 'updateStudents',
-    component: () => updateStudents
+    component: () => import('../views/students/updateStudents.vue')
+  },
+  {
+    path: '/professors',
+    name: 'professors',
+    component: () => import('../views/professors/professors.vue')
   },
   {
     path: '/professors/:ids',
     name: 'updateProfessors',
-    component: () => updateProfessors
+    component: () => import('../views/professors/updateProfessors.vue')
   },
   {
-    path: '/boards',
+    path: '/boards/',
     name: 'boards',
-    component: boards
+    component: () => import('../views/boards/boards.vue')
   },
   {
-    path: '/boards/:ids',
+    path: '/boards/details/:ids',
     name: 'boardsDetail',
-    component: () => import('../views/boardsDetail.vue')
+    component: () => import('../views/boards/boardsDetail.vue')
   },
   {
     path: '/boards-write',
     name: 'boardsWrite',
-    component: () => import('../views/boardsWrite.vue')
-  }
+    component: () => import('../views/boards/boardsWrite.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/loginPage.vue')
+  },
 ]
 
 const router = new VueRouter({
