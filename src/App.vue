@@ -22,7 +22,7 @@
 </style>
 
 <script>
-import login from "./components/login.vue";
+import login from "./components/user.vue";
 
 export default {
 	name: "app",

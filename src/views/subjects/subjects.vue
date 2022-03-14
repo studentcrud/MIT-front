@@ -13,7 +13,7 @@
             </ul>
             <div class="update_btns">
                 <button class="colorbtn" @click="toggle">등록</button>
-                <button class="colorbtn" @click="deleteSubject">선택 삭제</button>
+                <button class="colorbtn" @click="deleteSelectSubject">선택 삭제</button>
             </div>
                 <div class="paging_btn">
                 <button @click="prevPage" v-show="this.subjectPageCount !== 1">◀</button>
@@ -29,8 +29,8 @@
 <script>
 
 import insertSubjects from '../../components/insertSubjects';
-import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
+import {deleteSubject} from '../../api/index.js';
+import {getSubjectIndex} from '../../api/index.js';
 
 export default{
     name : 'subjects',
@@ -65,12 +65,8 @@ export default{
         toggle(){
             this.$store.commit('toggle');
         },
-        deleteSubject(){
-            axios.delete('/api/subjects/', {
-                data:{
-                    'subjects' : this.selectData
-                }
-            })
+        deleteSelectSubject(){
+            deleteSubject(this.selectData)
             .then((res)=>{
                 console.log(res);
                 this.$router.go();
@@ -81,7 +77,7 @@ export default{
             })
         },
         loadPageIndex(){
-            axios.get('/api/subjects/' + this.subjectPageCount)
+            getSubjectIndex(this.subjectPageCount)
             .then((res)=>{
                 this.subjectIndex = res.data.data;
             })
