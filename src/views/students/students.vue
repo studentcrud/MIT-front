@@ -34,7 +34,7 @@
 
 import insertStudents from '../../components/insertStudents';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8084';
+axios.defaults.baseURL = 'http://172.16.28.167:8080';
 
 export default{
     name : 'students',

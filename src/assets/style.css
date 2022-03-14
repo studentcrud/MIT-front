@@ -131,6 +131,10 @@ body{
 }
 
 /*=====board=====*/
+#board li{
+    cursor: pointer;
+}
+
 .paging_btn{
     display: flex;
     justify-content: center;
@@ -149,7 +153,6 @@ body{
     background: none;
     color: #555;
 }
-
 
 .board_info,
 .board_contents,
@@ -215,6 +218,26 @@ body{
     background-color: #fff;
     padding-bottom: 32px;
     margin-bottom: 32px;
+}
+
+.board_textarea textarea{
+    width: 100%;
+    min-height: 200px;
+}
+
+.board_title_input{
+    width: 100%;
+}
+
+.update_comment_form{
+    display: flex;
+    box-sizing: border-box;
+}
+
+.update_comment_form button{
+    font-size: 11px;
+    white-space: nowrap;
+    padding: 0 8px;
 }
 
 /*===join===*/

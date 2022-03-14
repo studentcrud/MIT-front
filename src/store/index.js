@@ -17,6 +17,7 @@ export default new Vuex.Store({
   actions,
   plugins: [
     createPersistedState({
+      //storage: window.sessionStorage,
       paths: [
         'students',
         'subjects',
