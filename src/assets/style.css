@@ -240,14 +240,11 @@ body{
     padding: 0 8px;
 }
 
-<<<<<<< HEAD
-=======
 .board_comment_btn{
     display: flex;
     align-items: center;
 }
 
->>>>>>> test3
 /*===join===*/
 
 .join_form h2{

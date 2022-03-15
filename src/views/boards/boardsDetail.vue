@@ -9,9 +9,6 @@
         <div class="comment">
             <ul>
                 <li v-for="item in this.comment" :key="item.contentId">
-<<<<<<< HEAD
-                    <h6>{{item.contentUsername}}</h6>
-=======
                     <div class="board_comment_btn">
                         <h6>{{item.contentUsername}}</h6>
                         <div v-if="$store.state.userId == item.contentUsername">
@@ -19,18 +16,12 @@
                             <button @click="removeComment(item.contentUsername, item.boardId, item.contentId)"><img src="../../assets/img/remove.png" alt="삭제"></button>
                         </div>
                     </div>
->>>>>>> test3
                     <p v-if=" showUpdateComment != item.contentId">{{item.content}}</p>
                     <textarea v-if=" showUpdateComment == item.contentId" v-model="item.content"/>
                     <div v-if=" showUpdateComment == item.contentId" class="update_comment_form">
                         <button @click="updateComment(item.boardId, item.contentId, item.content)">확인</button>
                         <button @click="showUpdateComment = ''">취소</button>
                     </div>
-<<<<<<< HEAD
-                    <button v-if="showUpdateComment != item.contentId" @click="updateCommentToggle(item.contentUsername, item.contentId)"><img src="../../assets/img/edit.png" alt="수정"></button>
-                    <button @click="removeComment(item.contentUsername, item.boardId, item.contentId)"><img src="../../assets/img/remove.png" alt="삭제"></button>
-=======
->>>>>>> test3
                 </li>
             </ul>
         </div>
@@ -49,8 +40,7 @@
 
 <script>
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
-axios.defaults.headers.common["Authorization"] = `Bearer ` + localStorage.getItem("token");
+axios.defaults.baseURL = 'http://172.16.28.167:8084';
 
 export default{
     name: 'boardsDetail',
@@ -75,12 +65,8 @@ export default{
         insertComment(){
             axios.post('/api/comments', JSON.stringify({"boardId": this.boardId, "content" : this.commentContent}), {
                 headers: {
-<<<<<<< HEAD
-                    "Content-Type" : `application/json`
-=======
                     "Content-Type" : `application/json`,
                     "Authorization" : `Bearer ` + localStorage.getItem("token")
->>>>>>> test3
                 }
             })
             .then((res)=>{
@@ -94,12 +80,8 @@ export default{
         updateComment(boardId, id, content){
             axios.put('/api/comments', JSON.stringify({"boardId" : boardId, "commentId": id, "content" : content}), {
                 headers: {
-<<<<<<< HEAD
-                    "Content-Type" : `application/json`
-=======
                     "Content-Type" : `application/json`,
                     "Authorization" : `Bearer ` + localStorage.getItem("token")
->>>>>>> test3
                 }
             })
             .then((res)=>{
@@ -114,12 +96,8 @@ export default{
             if(this.$store.state.userId == uid){
                 axios.delete('/api/comments/' + id, JSON.stringify({"comments.board.boardId" : boardId, "comments.id": id}), {
                     headers: {
-<<<<<<< HEAD
-                        "Content-Type" : `application/json`
-=======
                         "Content-Type" : `application/json`,
                         "Authorization" : `Bearer ` + localStorage.getItem("token")
->>>>>>> test3
                     }
                 })
                 .then((res)=>{

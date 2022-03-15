@@ -15,11 +15,7 @@
 
 <script>
 import axios from 'axios';
-<<<<<<< HEAD
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
-=======
 axios.defaults.baseURL = 'http://172.16.28.167:8084';
->>>>>>> test3
 axios.defaults.headers.common["Authorization"] = `Bearer ` + localStorage.getItem("token");
 
 export default{

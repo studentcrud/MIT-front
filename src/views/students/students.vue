@@ -33,13 +33,8 @@
 <script>
 
 import insertStudents from '../../components/insertStudents';
-<<<<<<< HEAD
-import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
-=======
 import {deleteStudent} from '../../api/index.js';
 import {getStudentIndex} from '../../api/index.js';
->>>>>>> test3
 
 export default{
     name : 'students',
