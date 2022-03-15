@@ -24,7 +24,7 @@
 <script>
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
+axios.defaults.baseURL = 'http://172.16.28.167:8084';
 
 export default{
     name:'updateProfessors',
@@ -54,6 +54,7 @@ export default{
         axios.get('/api/professor/' + this.id)
         .then((res)=>{
             this.professor = res.data
+            console.log(this.professor);
         })
         .catch((err)=>{
             console.log(err);

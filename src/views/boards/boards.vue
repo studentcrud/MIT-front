@@ -6,7 +6,6 @@
                     <p class="short">{{item.boardId}}</p>
                     <p class="title">{{item.title}}</p>
                     <p class="short">{{item.modifiedAt.slice(0,10)}}</p>
-                    <p class="short">{{item.writter}}</p>
                 </li>
             </ul>
             <div class="update_btns">
@@ -22,8 +21,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
+import {getBoardIndex} from '../../api/index.js';
 
 export default{
     name: 'boards',
@@ -55,7 +53,7 @@ export default{
             this.$router.push('/boards-write')
         },
         loadPageIndex(){
-            axios.get('/api/boards/' + this.boardPageCount)
+            getBoardIndex(this.boardPageCount)
             .then((res)=>{
                 this.boardIndex = res.data.data
             })

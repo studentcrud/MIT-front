@@ -31,8 +31,8 @@
 <script>
 
 import insertProfessors from '../../components/insertProfessors';
-import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
+import {deleteProfessor} from '../../api/index.js';
+import {getProfessorIndex} from '../../api/index.js';
 
 export default{
     name : 'professors',
@@ -68,11 +68,7 @@ export default{
             this.$store.commit('toggle');
         },
         deleteProfessors(){
-            axios.delete('/api/professors/', {
-                data:{
-                    'professors' : this.selectData
-                }
-            })
+            deleteProfessor(this.selectData)
             .then((res)=>{
                 console.log(res);
                 this.$router.go();
@@ -83,7 +79,7 @@ export default{
             })
         },
         loadPageIndex(){
-            axios.get('/api/professors/' + this.professorPageCount)
+            getProfessorIndex(this.professorPageCount)
             .then((res)=>{
                 this.professorIndex = res.data.data;
                 console.log(res.data.data);

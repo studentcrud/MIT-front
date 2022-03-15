@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-axios.defaults.baseURL = 'http://172.16.28.167:8080';
+import {insertProfessor} from '../api/index.js';
 
 export default{
     name: 'insertProfessors',
@@ -32,12 +31,7 @@ export default{
             this.$store.commit('toggle');
         },
         insertProfessorData(){
-            console.log(this.subject);
-            axios.post('/api/professors', {
-                professorName : this.name,
-                professorAge : this.age,
-                subjectName : this.subject
-            })
+            insertProfessor(this.name, this.age, this.subject)
             .then((res)=>{
                 console.log(res);
                 this.$router.go();
