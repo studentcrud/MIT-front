@@ -41,7 +41,6 @@
 <script>
 import axios from 'axios';
 axios.defaults.baseURL = 'http://172.16.28.167:8084';
-axios.defaults.headers.common["Authorization"] = `Bearer ` + localStorage.getItem("token");
 
 export default{
     name: 'boardsDetail',
@@ -66,7 +65,8 @@ export default{
         insertComment(){
             axios.post('/api/comments', JSON.stringify({"boardId": this.boardId, "content" : this.commentContent}), {
                 headers: {
-                    "Content-Type" : `application/json`
+                    "Content-Type" : `application/json`,
+                    "Authorization" : `Bearer ` + localStorage.getItem("token")
                 }
             })
             .then((res)=>{
@@ -80,7 +80,8 @@ export default{
         updateComment(boardId, id, content){
             axios.put('/api/comments', JSON.stringify({"boardId" : boardId, "commentId": id, "content" : content}), {
                 headers: {
-                    "Content-Type" : `application/json`
+                    "Content-Type" : `application/json`,
+                    "Authorization" : `Bearer ` + localStorage.getItem("token")
                 }
             })
             .then((res)=>{
@@ -95,7 +96,8 @@ export default{
             if(this.$store.state.userId == uid){
                 axios.delete('/api/comments/' + id, JSON.stringify({"comments.board.boardId" : boardId, "comments.id": id}), {
                     headers: {
-                        "Content-Type" : `application/json`
+                        "Content-Type" : `application/json`,
+                        "Authorization" : `Bearer ` + localStorage.getItem("token")
                     }
                 })
                 .then((res)=>{

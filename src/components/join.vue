@@ -37,7 +37,7 @@ export default{
     },
     watch:{
         insertId: function(){
-            this.axios.post('/api/users/check', JSON.stringify({"username": this.insertId}), {
+            this.axios.get('/api/users/check', JSON.stringify({"username": this.insertId}), {
                 headers: {
                 "Content-Type" : `application/json`
                 }
@@ -60,7 +60,8 @@ export default{
             if(id != "" || pw != ""){
                 this.axios.post('/api/users/signup', JSON.stringify({"username": id, "password": pw}), {
                     headers: {
-                    "Content-Type" : `application/json`
+                    "Content-Type" : `application/json`,
+                    "Authorization" : `Bearer ` + localStorage.getItem("token")
                     }
                 })
                 .then((res)=>{

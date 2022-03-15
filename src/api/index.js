@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'http://172.16.28.167:8084'
+    baseURL: 'http://172.16.28.167:8080'
 }
 
-axios.defaults.headers.common["Authorization"] = `Bearer ` + localStorage.getItem("token");
+//axios.defaults.headers.common["Authorization"] = `Bearer ` + localStorage.getItem("token");
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
 //get
 export function getAllDatas() {
     return axios.all([
